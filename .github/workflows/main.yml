@@ -37,7 +37,7 @@ jobs:
         # Path to Gatsby /public directory
         public-source-path: # optional, default is ./public/
         # Destination S3 Bucket
-        dest-s3-bucket: 
+        dest-s3-bucket: ${{ secrets.S3_BUCKET }}
         # Destination S3 Path
         dest-s3-path: # optional
         # Boolean, delete files on S3 not present in build (default: true)
