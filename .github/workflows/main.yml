@@ -31,3 +31,23 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+    - name: Deploy Gatsby to AWS S3
+      uses: jonelantha/gatsby-s3-action@v1.2.0
+      with:
+        # Path to Gatsby /public directory
+        public-source-path: # optional, default is ./public/
+        # Destination S3 Bucket
+        dest-s3-bucket: ${{ secrets.S3_BUCKET }}
+        # Destination S3 Path
+        dest-s3-path: # optional
+        # Boolean, delete files on S3 not present in build (default: true)
+        sync-delete: # optional, default is true
+        # Browser cache duration (sec) for cache control headers
+        browser-cache-duration: # optional, default is 31536000
+        # CDN cache duration (sec) for cache control headers (sec)
+        cdn-cache-duration: # optional, default is 31536000
+        # Cloudfront ID to invalidate
+        cloudfront-id-to-invalidate: # optional
+        # Cloudfront Path to invalidate (optional, default: '/*')
+        cloudfront-path-to-invalidate: # optional, default is /*
+
