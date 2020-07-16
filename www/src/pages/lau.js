@@ -32,10 +32,11 @@ const IndexPage = () => (
         </div>
         <div
             style={{
-                position: 'relative'
+                position: 'relative',
+                display: 'inline-flex'
             }}>
             <svg 
-                width="750" height="552" viewBox="0 0 750 552" fill="none" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 750 552" fill="none" xmlns="http://www.w3.org/2000/svg"
                 style={{
                     position: 'absolute',
                     height: '100%',
@@ -52,10 +53,11 @@ const IndexPage = () => (
         </div>
         <div
             style={{
-                position: 'relative'
+                position: 'relative',
+                display: 'inline-flex'
             }}>
             <svg 
-                width="750" height="552" viewBox="0 0 750 552" fill="none" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 750 552" fill="none" xmlns="http://www.w3.org/2000/svg"
                 style={{
                     position: 'absolute',
                     height: '100%',
