@@ -7,10 +7,11 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import { lastForecast } from "../utils/vedurstofa"
 
 const TrailForecast = ({ url }) => {
-
-
+  console.log(lastForecast())
+  
   return (
     <>
         <div
