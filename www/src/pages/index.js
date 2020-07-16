@@ -7,8 +7,8 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
     <div>
-        Dellan.is
-        <h1 id="subdomain"></h1>
+        
+        <p id="subdomain">Dellan.is <Link to="lau">Lau</Link></p>
         <img
             style={{
                 margin: '0'
