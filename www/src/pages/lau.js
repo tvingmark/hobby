@@ -11,7 +11,8 @@ const IndexPage = () => (
         <h1 id="subdomain"></h1>
         <div
             style={{
-                position: 'relative'
+                position: 'relative',
+                display: 'inline-flex'
             }}>
             <svg 
                 viewBox="0 0 750 552" fill="none" xmlns="http://www.w3.org/2000/svg"
