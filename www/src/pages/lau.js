@@ -5,7 +5,11 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import TrailForecast from "../components/trailForecast"
-import { getDate } from "../utils/vedurstofa"
+import { 
+        getDate, 
+        buildForecastURL,
+        lastForecast
+} from "../utils/vedurstofa"
 
 
 const IndexPage = () => {
@@ -13,15 +17,28 @@ const IndexPage = () => {
     console.log(day)
     console.log(month)
     console.log(year)
+    let index = 10 // create hook
+    let dateString = year + month + day
+    let indexString = index < 10 ? "00" + index : "0" + index
+    let forecastTime = lastForecast()
+    const urls = {
+        'WIND': buildForecastURL('WIND',forecastTime, dateString, indexString),
+        'HEAT': buildForecastURL('HEAT',forecastTime, dateString, indexString),
+        'PRECIP': buildForecastURL('PRECIP', forecastTime, dateString, indexString)
+    }    
     return (
         <div>
             Dellan.is - Laugavegurinn
             <h1 id="subdomain"></h1>          
             <TrailForecast 
-                url="https://www.vedur.is/photos/thattaspa_igb_su_10uv/200716_0000_009.gif"
-                date="200716"/>
-            <TrailForecast url="https://www.vedur.is/photos/thattaspa_igb_su_2t/200716_0000_009.gif" />
-            <TrailForecast url="https://www.vedur.is/photos/thattaspa_igb_su_urk-msl-10uv/200716_0000_009.gif" />
+                url={urls.WIND}
+            />
+            <TrailForecast
+                url={urls.HEAT}
+            />
+            <TrailForecast 
+                url={urls.PRECIP}
+            />
             <p>ÉG ELSKA ÞIG EDDA</p>
             <p>Byggt á gögnum frá Vegagerðinni & Veðurstofu Íslands</p>
         </div>  

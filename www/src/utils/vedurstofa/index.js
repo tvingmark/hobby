@@ -27,18 +27,34 @@ function currentForecast(hour){
     const hourplus2 = hour - 2
     
     if (hourplus2 >= 0 && hourplus2 < 6 ) {
-        return "00"
+        return "0000"
     } else if(hourplus2 >= 6 && hourplus2 < 12 ) {
-        return "06"
+        return "0600"
     } else if(hourplus2 >= 12 && hourplus2 < 18 ){
-        return "12"
+        return "1200"
     }  else {
-        return "18"
+        return "1800"
     }
 }
 
-function buildForecastURL(){
-    return "https://www.vedur.is/photos/thattaspa_igb_su_2t/200716_0000_009.gif"
+export function buildForecastURL(type, forecastTime, dateString, index){
+    let prefix;
+    let postfix = ".gif"
+    switch (type) {
+        case "HEAT":
+            prefix = "https://www.vedur.is/photos/thattaspa_igb_su_2t/"
+            break;
+        case "WIND":
+            prefix = "https://www.vedur.is/photos/thattaspa_igb_su_10uv/"
+            break;
+        case "PRECIP":
+            prefix = "https://www.vedur.is/photos/thattaspa_igb_su_urk-msl-10uv/"
+            break;
+        default:
+            prefix = ""
+            break;
+    }
+    return prefix + dateString + "_" + forecastTime+ "_" + index + postfix
 }
 
 function buildHeatForecastURL(date,time,number){
