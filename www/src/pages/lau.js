@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import TrailForecast from "../components/trailForecast"
+import Footer from "../components/footer"
 import { 
         getDate, 
         buildForecastURL,
@@ -39,33 +40,10 @@ const IndexPage = () => {
             <TrailForecast 
                 url={urls.PRECIP}
             />
-            <div
-                style={{
-                    width: '100%',
-                    position: 'sticky',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    bottom: 0,
-                    backgroundColor: 'purple',
-                    padding: '25px',
-                }}>
-                 <button
-                    onClick={() => setIndex(index + 1)}>
-                    +1
-                 </button>
-                 <button
-                    onClick={() => setIndex(index - 1)}>
-                    -1
-                 </button>
-                 <button
-                    onClick={() => setIndex(index + 6)}>
-                    +6
-                 </button>
-                 <button
-                    onClick={() => setIndex(index - 6)}>
-                    -6
-                 </button>                 
-            </div>
+            <Footer
+                setIndex={setIndex}
+                index={index}
+            />
             <p>ÉG ELSKA ÞIG EDDA</p>
             <p>Byggt á gögnum frá Vegagerðinni & Veðurstofu Íslands</p>
         </div>  
