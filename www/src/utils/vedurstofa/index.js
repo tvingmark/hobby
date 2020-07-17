@@ -24,7 +24,7 @@ export const getDate = () => {
 
 function currentForecast(hour){
     const times = [0,6,12,18]
-    const hourplus2 = hour - 2
+    const hourplus2 = hour - 3
     
     if (hourplus2 >= 0 && hourplus2 < 6 ) {
         return "0000"

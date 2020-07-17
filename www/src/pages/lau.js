@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -17,7 +17,7 @@ const IndexPage = () => {
     console.log(day)
     console.log(month)
     console.log(year)
-    let index = 10 // create hook
+    const [index, setIndex] = useState(1);
     let dateString = year + month + day
     let indexString = index < 10 ? "00" + index : "0" + index
     let forecastTime = lastForecast()
@@ -39,6 +39,33 @@ const IndexPage = () => {
             <TrailForecast 
                 url={urls.PRECIP}
             />
+            <div
+                style={{
+                    width: '100%',
+                    position: 'sticky',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    bottom: 0,
+                    backgroundColor: 'purple',
+                    padding: '25px',
+                }}>
+                 <button
+                    onClick={() => setIndex(index + 1)}>
+                    +1
+                 </button>
+                 <button
+                    onClick={() => setIndex(index - 1)}>
+                    -1
+                 </button>
+                 <button
+                    onClick={() => setIndex(index + 6)}>
+                    +6
+                 </button>
+                 <button
+                    onClick={() => setIndex(index - 6)}>
+                    -6
+                 </button>                 
+            </div>
             <p>ÉG ELSKA ÞIG EDDA</p>
             <p>Byggt á gögnum frá Vegagerðinni & Veðurstofu Íslands</p>
         </div>  
