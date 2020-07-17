@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "www",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
@@ -29,8 +29,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id E2TE0G6LAVIIKJ --paths \"/*\"",
-    "deploy-naive": "gatsby-plugin-s3 deploy",
+    "deploy-invalidate": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id E2TE0G6LAVIIKJ --paths \"/*\"",
+    "deploy": "gatsby-plugin-s3 deploy",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
